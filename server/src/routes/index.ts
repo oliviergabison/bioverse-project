@@ -1,6 +1,6 @@
 import express from "express";
 
-const { submitTicket, retrieveTickets, updateTicketStatus, addTicketReply, getTicketReplies } = require("../controllers/ticketController.ts");
+const { submitTicket, retrieveTickets, updateTicketStatus, addTicketReply, getTicketReplies } = require("../controllers/ticketController");
 const router = express.Router();
 
 router.get("/tickets/:ticketId/replies", getTicketReplies)
