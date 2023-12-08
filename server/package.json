@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node ./src/index.ts",
     "build": "npx tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
