@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 const { createPool, sql } = require("@vercel/postgres");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const routes = require("./routes");
+const routes = require("../src/routes");
 
 
 require("dotenv").config();
