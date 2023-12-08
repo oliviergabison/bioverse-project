@@ -1,3 +1,5 @@
 client/.env.production
 server/.env
 client/.vercel
+client/node_modules
+server/node_modules
