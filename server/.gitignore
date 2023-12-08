@@ -1,4 +1,2 @@
 .vercel
 .env
-client/.env.production
-server/.env

@@ -1,0 +1,3 @@
+client/.env.production
+server/.env
+client/.vercel
