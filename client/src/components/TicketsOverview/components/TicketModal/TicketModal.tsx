@@ -29,16 +29,20 @@ function TicketModal({
       if (!ticket) {
         return;
       }
-      const response = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/tickets/${ticket.id}/replies`
-      );
-      setTicketReplies(response.data);
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/tickets/${ticket.id}/replies`
+        );
+        setTicketReplies(response.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     getTicketReplies();
     setSelectedStatus(ticket?.status);
-
-    setLoading(false);
   }, [ticket]);
 
   const handleUpdateStatus = async (
@@ -98,7 +102,12 @@ function TicketModal({
 
   return (
     <>
-      <Modal show={showTicketModal} onClose={() => setShowTicketModal(false)}>
+      <Modal
+        show={showTicketModal}
+        onClose={() => {
+          setShowTicketModal(false);
+        }}
+      >
         <Modal.Header>Ticket #{ticket.id}</Modal.Header>
         <Modal.Body>
           <div className="flex flex-col space-y-5">

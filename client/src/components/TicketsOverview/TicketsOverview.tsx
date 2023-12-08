@@ -63,12 +63,14 @@ function TicketOverview() {
           <Table.Body>{renderTableBody()}</Table.Body>
         </Table>
       </div>
-      <TicketModal
-        showTicketModal={showTicketModal}
-        setShowTicketModal={setShowTicketModal}
-        ticket={selectedTicket}
-        setTickets={setTickets}
-      />
+      {showTicketModal && (
+        <TicketModal
+          showTicketModal={showTicketModal}
+          setShowTicketModal={setShowTicketModal}
+          ticket={selectedTicket}
+          setTickets={setTickets}
+        />
+      )}
     </>
   );
 }
