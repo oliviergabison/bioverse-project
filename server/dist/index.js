@@ -2,7 +2,7 @@ const express = require("express");
 const { createPool, sql } = require("@vercel/postgres");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const routes = require("./src/routes/index.ts");
+const routes = require("./routes");
 require("dotenv").config();
 const app = express();
 app.use(bodyParser.json());
