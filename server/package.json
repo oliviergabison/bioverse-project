@@ -2,12 +2,8 @@
   "name": "bioverse-backend",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "18.x"
-  },
-  "main": "src/app.ts",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "node index.ts",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
