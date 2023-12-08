@@ -67,3 +67,4 @@ function getTicketRepliesQuery(ticketId) {
     });
 }
 exports.getTicketRepliesQuery = getTicketRepliesQuery;
+//# sourceMappingURL=ticketQueries.js.map

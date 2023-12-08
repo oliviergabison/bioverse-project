@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTicketReplies = exports.addTicketReply = exports.updateTicketStatus = exports.retrieveTickets = exports.submitTicket = void 0;
 const ticketQueries_1 = require("../queries/ticketQueries");
 const submitTicket = (req, res) => {
     try {
@@ -21,7 +20,6 @@ const submitTicket = (req, res) => {
         res.json({ success: false, message: "Failed to Create Ticket" });
     }
 };
-exports.submitTicket = submitTicket;
 const retrieveTickets = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const tickets = yield (0, ticketQueries_1.getTicketsQuery)();
@@ -31,7 +29,6 @@ const retrieveTickets = (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(500).send();
     }
 });
-exports.retrieveTickets = retrieveTickets;
 const updateTicketStatus = (req, res) => {
     try {
         const updateTicketStatusPayload = req.body;
@@ -43,7 +40,6 @@ const updateTicketStatus = (req, res) => {
         res.json({ success: false, message: "Failed to Update Ticket Status" });
     }
 };
-exports.updateTicketStatus = updateTicketStatus;
 const addTicketReply = (req, res) => {
     try {
         const ticketId = parseInt(req.params.ticketId);
@@ -57,7 +53,6 @@ const addTicketReply = (req, res) => {
         res.json({ success: false, message: "Failed to reply to ticket" });
     }
 };
-exports.addTicketReply = addTicketReply;
 const getTicketReplies = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const ticketId = parseInt(req.params.ticketId);
@@ -69,4 +64,5 @@ const getTicketReplies = (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(500).send();
     }
 });
-exports.getTicketReplies = getTicketReplies;
+module.exports = { submitTicket, retrieveTickets, updateTicketStatus, addTicketReply, getTicketReplies };
+//# sourceMappingURL=ticketController.js.map

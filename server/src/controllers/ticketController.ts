@@ -64,4 +64,4 @@ const getTicketReplies = async (req: Request, res: Response) => {
     }
 }
 
-  export { submitTicket, retrieveTickets, updateTicketStatus, addTicketReply, getTicketReplies };
+  module.exports = { submitTicket, retrieveTickets, updateTicketStatus, addTicketReply, getTicketReplies };
